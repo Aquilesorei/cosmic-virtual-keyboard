@@ -1,0 +1,17 @@
+[package]
+name = "cosmic-virtual-keyboard"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.80"
+authors = ["ZONGO Achille <achillezongo07@gmail.com>"]
+license = "GPL-3.0-or-later"
+description = "Virtual keyboard toggle applet for Cosmic DE"
+
+[dependencies]
+[dependencies.libcosmic]
+git = "https://github.com/pop-os/libcosmic"
+default-features = false
+features = ["applet", "tokio", "wayland"]
+
+# Process management for controlling wvkbd
+tokio = { version = "1.0", features = ["process", "rt"] }

@@ -1,0 +1,58 @@
+app-id: com.cosmic.VirtualKeyboard
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.rust-stable
+command: cosmic-virtual-keyboard
+finish-args:
+  # Need access to Wayland
+  - --socket=wayland
+  # Need access to session bus for COSMIC integration
+  - --socket=session-bus
+  # Need to spawn wvkbd process
+  - --talk-name=org.freedesktop.spawn
+  # Access to user binaries (for wvkbd)
+  - --filesystem=~/.local/bin:ro
+  # Applet needs to integrate with COSMIC panel
+  - --talk-name=com.system76.CosmicPanel
+
+build-options:
+  append-path: /usr/lib/sdk/rust-stable/bin
+  env:
+    CARGO_HOME: /run/build/cosmic-virtual-keyboard/cargo
+
+modules:
+  # Build wvkbd dependency
+  - name: wvkbd
+    buildsystem: simple
+    build-commands:
+      - make
+      - install -Dm755 wvkbd-mobintl $FLATPAK_DEST/bin/wvkbd-mobintl
+    sources:
+      - type: git
+        url: https://github.com/jjsullivan5196/wvkbd.git
+        tag: v0.4
+        commit: f9e9278e8c1d5d80615faebb9bb6a8d5eaaa5855
+    modules:
+      - name: wayland-protocols
+        buildsystem: meson
+        sources:
+          - type: archive
+            url: https://gitlab.freedesktop.org/wayland/wayland-protocols/-/releases/1.32/downloads/wayland-protocols-1.32.tar.xz
+            sha256: 7459799d340c8296b695ef857c07ddef24c5a09b09ab6a74f7b92640372c2415
+
+  # Build the COSMIC applet
+  - name: cosmic-virtual-keyboard
+    buildsystem: simple
+    build-commands:
+      - cargo --offline fetch --manifest-path Cargo.toml --verbose
+      - cargo --offline build --release --verbose
+      - install -Dm755 target/release/cosmic-virtual-keyboard $FLATPAK_DEST/bin/cosmic-virtual-keyboard
+      - install -Dm644 cosmic-virtual-keyboard.desktop $FLATPAK_DEST/share/applications/com.cosmic.VirtualKeyboard.desktop
+      - install -Dm644 com.cosmic.VirtualKeyboard.appdata.xml $FLATPAK_DEST/share/appdata/com.cosmic.VirtualKeyboard.appdata.xml
+      - install -Dm644 icons/hicolor/scalable/apps/input-keyboard-symbolic.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/com.cosmic.VirtualKeyboard.svg
+    sources:
+      - type: dir
+        path: .
+      - cargo-sources.json

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.cosmic.VirtualKeyboard</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  
+  <name>Virtual Keyboard</name>
+  <summary>Panel applet for controlling virtual keyboards in COSMIC DE</summary>
+  
+  <description>
+    <p>
+      A clean, native COSMIC DE panel applet that provides easy control over virtual keyboards.
+      Perfect for touchscreen devices, accessibility needs, or situations where a physical keyboard isn't available.
+    </p>
+    <p>
+      This applet takes a smart integration approach by using the mature wvkbd virtual keyboard and adding
+      seamless COSMIC panel integration. Simply click the keyboard icon in your panel to control the
+      virtual keyboard with options to start, stop, show, and hide.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Native COSMIC panel integration with keyboard icon</li>
+      <li>Status-aware display showing keyboard state</li>
+      <li>Easy toggle controls for start/stop and show/hide</li>
+      <li>Uses proven wvkbd keyboard engine</li>
+      <li>No focus stealing - keyboard appears as overlay</li>
+      <li>Full QWERTY layout with modifier keys</li>
+      <li>Proper signal management for reliable control</li>
+    </ul>
+  </description>
+  
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/yourusername/cosmic-virtual-keyboard/main/screenshots/panel-icon.png</image>
+      <caption>Virtual Keyboard applet in COSMIC panel</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/yourusername/cosmic-virtual-keyboard/main/screenshots/popup-controls.png</image>
+      <caption>Control popup with keyboard status and toggle options</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/yourusername/cosmic-virtual-keyboard/main/screenshots/keyboard-shown.png</image>
+      <caption>Virtual keyboard displayed at bottom of screen</caption>
+    </screenshot>
+  </screenshots>
+  
+  <url type="homepage">https://github.com/yourusername/cosmic-virtual-keyboard</url>
+  <url type="bugtracker">https://github.com/yourusername/cosmic-virtual-keyboard/issues</url>
+  <url type="vcs-browser">https://github.com/yourusername/cosmic-virtual-keyboard</url>
+  
+  <developer_name>Your Name</developer_name>
+  <update_contact>your.email@example.com</update_contact>
+  
+  <provides>
+    <binary>cosmic-virtual-keyboard</binary>
+  </provides>
+  
+  <launchable type="desktop-id">com.cosmic.VirtualKeyboard.desktop</launchable>
+  
+  <categories>
+    <category>Utility</category>
+    <category>Accessibility</category>
+    <category>System</category>
+  </categories>
+  
+  <keywords>
+    <keyword>virtual</keyword>
+    <keyword>keyboard</keyword>
+    <keyword>accessibility</keyword>
+    <keyword>input</keyword>
+    <keyword>touch</keyword>
+    <keyword>panel</keyword>
+    <keyword>applet</keyword>
+    <keyword>cosmic</keyword>
+  </keywords>
+  
+  <content_rating type="oars-1.1" />
+  
+  <releases>
+    <release version="0.1.0" date="2024-10-04">
+      <description>
+        <p>Initial release of COSMIC Virtual Keyboard Applet</p>
+        <ul>
+          <li>Native COSMIC panel integration</li>
+          <li>Virtual keyboard control via wvkbd</li>
+          <li>Start, stop, show, hide functionality</li>
+          <li>Status-aware display</li>
+          <li>Clean, minimal design</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>

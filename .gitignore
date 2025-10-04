@@ -1,0 +1,16 @@
+/target
+
+# Flatpak build artifacts
+build-dir/
+cargo-sources.json
+.flatpak-builder/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
