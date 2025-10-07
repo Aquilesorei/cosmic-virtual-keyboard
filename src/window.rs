@@ -16,7 +16,7 @@ use cosmic::widget::button;
 use std::process::{Command, Stdio};
 
 // Every COSMIC Application and Applet MUST have an ID
-const ID: &str = "com.cosmic.VirtualKeyboard";
+const ID: &str = "io.github.aquilesorei.Spaceboard";
 
 /*
  * Every COSMIC model must be a struct data type.

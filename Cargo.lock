@@ -1030,6 +1030,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "cosmic-ext-spaceboard"
+version = "0.1.0"
+dependencies = [
+ "libcosmic",
+]
+
+[[package]]
 name = "cosmic-freedesktop-icons"
 version = "0.3.0"
 source = "git+https://github.com/pop-os/freedesktop-icons#8a05c322c482ff3c69cf34bacfee98907ac45307"
@@ -1115,13 +1122,6 @@ dependencies = [
  "serde",
  "serde_json",
  "thiserror 2.0.17",
-]
-
-[[package]]
-name = "cosmic-virtual-keyboard"
-version = "0.1.0"
-dependencies = [
- "libcosmic",
 ]
 
 [[package]]

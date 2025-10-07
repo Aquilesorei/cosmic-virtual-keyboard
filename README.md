@@ -1,13 +1,13 @@
-# COSMIC Virtual Keyboard Applet
+# Spaceboard
 
-A clean, native COSMIC DE panel applet for controlling virtual keyboards on Wayland systems. This project provides an elegant solution for Pop!_OS users who need reliable virtual keyboard functionality without the complexity of building a full keyboard from scratch.
+A clean, native COSMIC™ desktop panel applet for controlling virtual keyboards on Wayland systems. This project provides an elegant solution for Pop!_OS users who need reliable virtual keyboard functionality without the complexity of building a full keyboard from scratch.
 
 ## 🚀 New Approach
 
 Instead of implementing a complete virtual keyboard, this project takes a **smart integration approach**:
 
 1. **🎹 Uses wvkbd** - A mature, well-tested virtual keyboard ([jjsullivan5196/wvkbd](https://github.com/jjsullivan5196/wvkbd))
-2. **🎛️ Adds COSMIC Panel Integration** - A native applet that fits perfectly into COSMIC DE's design language
+2. **🎛️ Adds COSMIC Panel Integration** - A native applet that fits perfectly into COSMIC™ desktop's design language
 3. **🔧 Provides Easy Control** - Simple toggle, show, hide, and status functionality
 
 ## 📋 Features
@@ -31,19 +31,19 @@ Instead of implementing a complete virtual keyboard, this project takes a **smar
 ## 🛠️ Components
 
 - **wvkbd-mobintl**: The actual virtual keyboard (external dependency)
-- **cosmic-virtual-keyboard**: The COSMIC panel applet (this project)
+- **cosmic-ext-spaceboard**: The COSMIC panel applet (this project)
 - **Desktop Integration**: Proper `.desktop` file for COSMIC panel discovery
 
 ## 📁 Project Structure
 
 ```
-cosmic-virtual-keyboard/
+spaceboard/
 ├── src/
 │   ├── main.rs           # Application entry point
 │   ├── window.rs         # COSMIC applet implementation
 │   └── lib.rs            # Library placeholder
 ├── Cargo.toml           # Rust dependencies
-├── cosmic-virtual-keyboard.desktop  # Desktop entry for COSMIC
+├── spaceboard.desktop   # Desktop entry for COSMIC
 ├── setup.sh             # Automated installation script
 └── README.md            # This file
 ```
@@ -55,7 +55,7 @@ cosmic-virtual-keyboard/
 🚀 **Coming Soon!** The easiest way to install this applet will be through the COSMIC Store:
 
 1. Open **COSMIC Store**
-2. Search for "Virtual Keyboard"
+2. Search for "Spaceboard"
 3. Click **Install**
 4. Add to your panel via COSMIC Settings → Desktop → Panel
 
@@ -92,15 +92,15 @@ cd ..
 cargo build --release
 
 # Install system-wide
-sudo cp target/release/cosmic-virtual-keyboard /usr/bin/
-sudo cp cosmic-virtual-keyboard.desktop /usr/share/applications/
+sudo cp target/release/cosmic-ext-spaceboard /usr/bin/
+sudo cp spaceboard.desktop /usr/share/applications/
 ```
 
 3. **Add to COSMIC Panel**:
    - Open COSMIC Settings
    - Go to Desktop → Panel
    - Click "Add Applet" 
-   - Select "Virtual Keyboard" from the list
+   - Select "Spaceboard" from the list
 
 ## 🎮 Usage
 
@@ -134,11 +134,11 @@ std::process::Command::new("wvkbd-mobintl")
 ```
 
 ### Desktop Entry
-Modify `cosmic-virtual-keyboard.desktop` to change applet properties:
+Modify `spaceboard.desktop` to change applet properties:
 ```ini
 [Desktop Entry]
-Name=Virtual Keyboard
-Icon=input-keyboard-symbolic
+Name=Spaceboard
+Icon=io.github.aquilesorei.Spaceboard
 X-CosmicApplet=true
 # Other properties...
 ```
@@ -171,7 +171,7 @@ cargo build
 cargo build --release
 
 # Run directly (for testing)
-./target/debug/cosmic-virtual-keyboard
+./target/debug/cosmic-ext-spaceboard
 ```
 
 ### Flatpak Development
@@ -183,10 +183,10 @@ For COSMIC Store distribution, the applet uses Flatpak:
 ./generate-cargo-sources.sh
 
 # Build Flatpak (requires flatpak-builder)
-flatpak-builder --user --install --force-clean build-dir com.cosmic.VirtualKeyboard.yml
+flatpak-builder --user --install --force-clean build-dir io.github.aquilesorei.Spaceboard.json
 
 # Run the Flatpak version
-flatpak run com.cosmic.VirtualKeyboard
+flatpak run io.github.aquilesorei.Spaceboard
 ```
 
 **Requirements for Flatpak building:**

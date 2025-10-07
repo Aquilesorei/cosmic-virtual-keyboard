@@ -1,11 +1,11 @@
 [package]
-name = "cosmic-virtual-keyboard"
+name = "cosmic-ext-spaceboard"
 version = "0.1.0"
 edition = "2021"
 rust-version = "1.80"
 authors = ["ZONGO Achille <achillezongo07@gmail.com>"]
 license = "GPL-3.0-or-later"
-description = "Virtual keyboard toggle applet for Cosmic DE"
+description = "Virtual keyboard toggle applet for COSMIC™ desktop"
 
 [dependencies]
 [dependencies.libcosmic]
