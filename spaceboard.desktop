@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Spaceboard
+GenericName=Virtual Keyboard Applet
+Comment=Control virtual keyboards from COSMIC™ panel
+Type=Application
+Exec=cosmic-ext-spaceboard
+Terminal=false
+Categories=Utility;Accessibility;System;COSMIC;
+Keywords=virtual;keyboard;accessibility;input;touch;panel;applet;cosmic;spaceboard;
+Icon=io.github.aquilesorei.Spaceboard
+StartupNotify=true
+NoDisplay=true
+X-CosmicApplet=true
+X-CosmicHoverPopup=End
+X-OverflowPriority=10
